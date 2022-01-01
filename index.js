@@ -3,27 +3,36 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick=this.handleClick.bind(this)
+    this.handleCrash=this.handleCrash.bind(this)
+    this.handleSnare=this.handleSnare.bind(this)
     this.handleKeyPress-this.handleKeyPress.bind(this)
   }
 
   
 
-  handleClick() {
-    document.getElementById("crash").load()
-    document.getElementById("crash").play()
-  }
+  handleCrash() {
+    document.getElementById("crash-aud").load()
+    document.getElementById("crash-aud").play()
+    }
+  handleSnare() {
+    document.getElementById("snare-aud").load()
+    document.getElementById("snare-aud").play()
+    }
+  
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress)
   }
 
   handleKeyPress(e) {
-    if (e.key==="a") { 
-    document.getElementById("crash").load()
-    document.getElementById("crash").play()
+    if (e.key==="e") { 
+    document.getElementById("crash-aud").load()
+    document.getElementById("crash-aud").play()
     }
-    return
+    else if(e.key==="z") { 
+      document.getElementById("snare-aud").load()
+      document.getElementById("snare-aud").play()
+      }
   }
 
 
@@ -31,12 +40,17 @@ class App extends React.Component {
     return (
       <div>
       <h1>Test Button</h1>
-      <button onClick = {this.handleClick}>
-        Click to play drum sound
+      <button id="crash-butt" onClick = {this.handleCrash}>
+        Crash
       </button>
-      <audio id="crash" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
-
+      <audio id="crash-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
     </audio>
+      <button id="snare-butt" onClick = {this.handleSnare}>
+        Snare
+      </button>
+      <audio id="snare-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
+
+      </audio>
       </div>
       );
     }
