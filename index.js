@@ -13,42 +13,74 @@ class App extends React.Component {
     this.handleBass=this.handleBass.bind(this)
     this.handleFloorTom=this.handleFloorTom.bind(this)
     this.handleKeyPress=this.handleKeyPress.bind(this)
+
+this.state ={
+  drumpart: "thedrumpart"
+}
+
   }
   handleOpenhh() {
     document.getElementById("Q").load()
     document.getElementById("Q").play()
+    this.setState({
+      drumpart: "Open Hi-Hat"
+    })
   }
   handleCrash() {
     document.getElementById("W").load()
     document.getElementById("W").play()
+    this.setState({
+      drumpart: "Crash"
+    })
   }
   handleRide() {
     document.getElementById("E").load()
     document.getElementById("E").play()
+    this.setState({
+      drumpart: "Ride"
+    })
   }
   handleClosedhh() {
     document.getElementById("A").load()
     document.getElementById("A").play()
+    this.setState({
+      drumpart: "Closed Hi-Hat"
+    })
   }
   handleTom1() {
     document.getElementById("S").load()
     document.getElementById("S").play()
+    this.setState({
+      drumpart: "High Tom"
+    })
   }
   handleTom2() {
     document.getElementById("D").load()
     document.getElementById("D").play()
+    this.setState({
+      drumpart: "Low Tom"
+    })
   }
   handleSnare() {
     document.getElementById("Z").load()
     document.getElementById("Z").play()
+    this.setState({
+      drumpart: "Snare"
+    })
   }
   handleBass() {
     document.getElementById("X").load()
     document.getElementById("X").play()
+    this.setState({
+      drumpart: "Bass"
+    })
   }
   handleFloorTom() {
     document.getElementById("C").load()
     document.getElementById("C").play()
+    this.setState({
+      drumpart: "Floor Tom"
+    })
   }
   
   componentDidMount() {
@@ -60,38 +92,65 @@ class App extends React.Component {
     case "q":
     document.getElementById("Q").load()
     document.getElementById("Q").play()
+    this.setState({
+      drumpart: "Open Hi-Hat"
+    })
     break; 
     case "w": 
     document.getElementById("W").load()
     document.getElementById("W").play()
+    this.setState({
+      drumpart: "Crash"
+    })
     break;
     case "e": 
     document.getElementById("E").load()
     document.getElementById("E").play()
+    this.setState({
+      drumpart: "Ride"
+    })
     break;
     case "a":  
     document.getElementById("A").load()
     document.getElementById("A").play()
+    this.setState({
+      drumpart: "Closed Hi-Hat"
+    })
     break;
     case "s":  
     document.getElementById("S").load()
     document.getElementById("S").play()
+    this.setState({
+      drumpart: "High Tom"
+    })
     break;
     case "d":  
     document.getElementById("D").load()
     document.getElementById("D").play()
+    this.setState({
+      drumpart: "Low Tom"
+    })
     break;
     case "z":  
     document.getElementById("Z").load()
     document.getElementById("Z").play()
+    this.setState({
+      drumpart: "Snare"
+    })
     break;
     case "x":  
     document.getElementById("X").load()
     document.getElementById("X").play()
+    this.setState({
+      drumpart: "Bass"
+    })
     break;
     case "c":  
     document.getElementById("C").load()
     document.getElementById("C").play()
+    this.setState({
+      drumpart: "Floor Tom"
+    })
     break;
   }
 }
@@ -148,37 +207,13 @@ render() {
       <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
       </button>
-      <div id="display">TEST DISPLAY</div>
+      <div id="display">{this.state.drumpart}</div>
       </div>
       </div>
      
       );
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
