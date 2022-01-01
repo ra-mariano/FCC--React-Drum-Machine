@@ -47,8 +47,8 @@ class App extends React.Component {
     document.getElementById("bass-aud").play()
   }
   handleFloorTom() {
-    document.getElementById("bass-aud").load()
-    document.getElementById("bass-aud").play()
+    document.getElementById("floortom-aud").load()
+    document.getElementById("floortom-aud").play()
   }
   
   componentDidMount() {
@@ -141,7 +141,7 @@ render() {
       </button>
       <audio id="bass-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
       </audio>
-      <button className= "drump-pad" id="floortom" onClick = {this.handleFloortom}>
+      <button className= "drump-pad" id="floortom" onClick = {this.handleFloorTom}>
         Floor Tom
       </button>
       <audio id="floortom-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
