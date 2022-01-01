@@ -99,53 +99,54 @@ class App extends React.Component {
 
 render() {
   return (
-      <div className="container">
-        <div className="drum-machine">
+      <div id="container">
+        <div id="drum-machine">
       <h1>Test Button</h1>
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
         Q
-      </button>
-      <audio id="openhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
+        <audio className="clip" id="openhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
     </audio>
+      </button>
+     
       <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
         W
       </button>
-      <audio id="crash-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
+      <audio className="clip" id="crash-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
     </audio>
     <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
         E
       </button>
-      <audio id="ride-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
+      <audio className="clip" id="ride-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
     </audio>
       <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
         A
       </button>
-      <audio id="closedhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
+      <audio className="clip" id="closedhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
     </audio>
     <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
         S
       </button>
-      <audio id="tom1-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
+      <audio className="clip" id="tom1-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
     </audio>
      <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
         D
       </button>
-      <audio id="tom2-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
+      <audio className="clip" id="tom2-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
     </audio>
       <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
         Z
       </button>
-      <audio id="snare-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
+      <audio className="clip" id="snare-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
       </audio>
       <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
         X
       </button>
-      <audio id="bass-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
+      <audio className="clip" id="bass-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
       </audio>
       <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
         C
       </button>
-      <audio id="floortom-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
+      <audio className="clip" id="floortom-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
       <div id="display">TEST DISPLAY</div>
       </div>
