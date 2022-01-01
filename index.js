@@ -15,40 +15,40 @@ class App extends React.Component {
     this.handleKeyPress=this.handleKeyPress.bind(this)
   }
   handleOpenhh() {
-    document.getElementById("openhh-aud").load()
-    document.getElementById("openhh-aud").play()
+    document.getElementById("Q").load()
+    document.getElementById("Q").play()
   }
   handleCrash() {
-    document.getElementById("crash-aud").load()
-    document.getElementById("crash-aud").play()
+    document.getElementById("W").load()
+    document.getElementById("W").play()
   }
   handleRide() {
-    document.getElementById("ride-aud").load()
-    document.getElementById("ride-aud").play()
+    document.getElementById("E").load()
+    document.getElementById("E").play()
   }
   handleClosedhh() {
-    document.getElementById("closedhh-aud").load()
-    document.getElementById("closedhh-aud").play()
+    document.getElementById("A").load()
+    document.getElementById("A").play()
   }
   handleTom1() {
-    document.getElementById("tom1-aud").load()
-    document.getElementById("tom1-aud").play()
+    document.getElementById("S").load()
+    document.getElementById("S").play()
   }
   handleTom2() {
-    document.getElementById("tom2-aud").load()
-    document.getElementById("tom2-aud").play()
+    document.getElementById("D").load()
+    document.getElementById("D").play()
   }
   handleSnare() {
-    document.getElementById("snare-aud").load()
-    document.getElementById("snare-aud").play()
+    document.getElementById("Z").load()
+    document.getElementById("Z").play()
   }
   handleBass() {
-    document.getElementById("bass-aud").load()
-    document.getElementById("bass-aud").play()
+    document.getElementById("X").load()
+    document.getElementById("X").play()
   }
   handleFloorTom() {
-    document.getElementById("floortom-aud").load()
-    document.getElementById("floortom-aud").play()
+    document.getElementById("C").load()
+    document.getElementById("C").play()
   }
   
   componentDidMount() {
@@ -58,40 +58,40 @@ class App extends React.Component {
   handleKeyPress(e) {
     switch (e.key) {
     case "q":
-    document.getElementById("openhh-aud").load()
-    document.getElementById("openhh-aud").play()
-    break;  
+    document.getElementById("Q").load()
+    document.getElementById("Q").play()
+    break; 
     case "w": 
-    document.getElementById("crash-aud").load()
-    document.getElementById("crash-aud").play()
+    document.getElementById("W").load()
+    document.getElementById("W").play()
     break;
     case "e": 
-    document.getElementById("ride-aud").load()
-    document.getElementById("ride-aud").play()
+    document.getElementById("E").load()
+    document.getElementById("E").play()
     break;
     case "a":  
-    document.getElementById("closedhh-aud").load()
-    document.getElementById("closedhh-aud").play()
+    document.getElementById("A").load()
+    document.getElementById("A").play()
     break;
     case "s":  
-    document.getElementById("tom1-aud").load()
-    document.getElementById("tom1-aud").play()
+    document.getElementById("S").load()
+    document.getElementById("S").play()
     break;
     case "d":  
-    document.getElementById("tom2-aud").load()
-    document.getElementById("tom2-aud").play()
+    document.getElementById("D").load()
+    document.getElementById("D").play()
     break;
     case "z":  
-    document.getElementById("snare-aud").load()
-    document.getElementById("snare-aud").play()
+    document.getElementById("Z").load()
+    document.getElementById("Z").play()
     break;
     case "x":  
-    document.getElementById("bass-aud").load()
-    document.getElementById("bass-aud").play()
+    document.getElementById("X").load()
+    document.getElementById("X").play()
     break;
     case "c":  
-    document.getElementById("floortom-aud").load()
-    document.getElementById("floortom-aud").play()
+    document.getElementById("C").load()
+    document.getElementById("C").play()
     break;
   }
 }
@@ -104,50 +104,50 @@ render() {
       <h1>Test Button</h1>
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
         Q
-        <audio className="clip" id="openhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
+        <audio className="clip" id="Q" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
     </audio>
       </button>
      
       <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
         W
-      </button>
-      <audio className="clip" id="crash-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
+      <audio className="clip" id="W" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
     </audio>
+      </button>
     <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
         E
-      </button>
-      <audio className="clip" id="ride-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
+      <audio className="clip" id="E" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
     </audio>
+      </button>
       <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
         A
-      </button>
-      <audio className="clip" id="closedhh-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
+      <audio className="clip" id="A" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
     </audio>
+      </button>
     <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
         S
-      </button>
-      <audio className="clip" id="tom1-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
+      <audio className="clip" id="S" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
     </audio>
+      </button>
      <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
         D
-      </button>
-      <audio className="clip" id="tom2-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
+      <audio className="clip" id="D" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
     </audio>
+      </button>
       <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
         Z
-      </button>
-      <audio className="clip" id="snare-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
+      <audio className="clip" id="Z" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
       </audio>
+      </button>
       <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
         X
-      </button>
-      <audio className="clip" id="bass-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
+      <audio className="clip" id="X" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
       </audio>
+      </button>
       <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
         C
-      </button>
-      <audio className="clip" id="floortom-aud" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
+      <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
+      </button>
       <div id="display">TEST DISPLAY</div>
       </div>
       </div>
