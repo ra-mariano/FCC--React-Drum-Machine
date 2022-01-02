@@ -15,7 +15,7 @@ class App extends React.Component {
     this.handleKeyPress=this.handleKeyPress.bind(this)
 
 this.state ={
-  drumpart: "thedrumpart"
+  drumpart: "Click A Pad!"
 }
 
   }
@@ -160,7 +160,7 @@ render() {
   return (
       <div id="container">
         <div id="drum-machine">
-      <h1>Test Button</h1>
+      <h1>React Drum Machine</h1>
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
         Q
         <audio className="clip" id="Q" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
@@ -207,11 +207,15 @@ render() {
       <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
       </button>
+      <label className="switch">
+  <input id="input" type="checkbox"/>
+  <span className="slider"></span>
+</label>
       <div id="display">{this.state.drumpart}</div>
       </div>
       </div>
      
-      );
+      ) 
     }
   }
 

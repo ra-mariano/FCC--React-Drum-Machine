@@ -1,0 +1,15 @@
+#input {
+  background-color: rgb(255, 0, 242);
+  width: 300px
+}
+
+.slider {
+  background-color: blue;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
