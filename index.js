@@ -13,7 +13,7 @@ class App extends React.Component {
     this.handleBass=this.handleBass.bind(this)
     this.handleFloorTom=this.handleFloorTom.bind(this)
     this.handleKeyPress=this.handleKeyPress.bind(this)
-    this.testFunc=this.testFunc.bind(this)
+    this.powerButton=this.powerButton.bind(this)
 
 this.state ={
   drumpart: "Click A Pad!"
@@ -157,9 +157,16 @@ this.state ={
   } 
 }
 
-testFunc() {
+powerButton() {
   if(document.getElementById("input").checked) {
-  console.log("TEST FUNC!")
+    this.setState({
+      drumpart: ""
+    });
+    document.getElementsByClassName("clip").forEach(items => items.muted = true)
+  }
+  else {
+    document.getElementsByClassName("clip").forEach(items => items.load())
+    document.getElementsByClassName("clip").forEach(items => items.muted = false)
   }
 }
 
@@ -217,7 +224,7 @@ render() {
       </audio>
       </button>
       <label className="label">
-  <input id="input" type="checkbox" onClick={this.testFunc}/>
+  <input id="input" type="checkbox" onClick={this.powerButton}/>
   <span className="span"></span>
   ON/OFF
 </label>
