@@ -207,9 +207,13 @@ render() {
       <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
       </button>
-      <label className="switch">
+      <label className="label">
   <input id="input" type="checkbox"/>
-  <span className="slider"></span>
+  <span className="span"></span>
+</label>
+<label id="label2">
+  <input id="input2" type="checkbox"/>
+  <span id="span2"></span>
 </label>
       <div id="display">{this.state.drumpart}</div>
       </div>
