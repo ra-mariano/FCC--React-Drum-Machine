@@ -13,6 +13,7 @@ class App extends React.Component {
     this.handleBass=this.handleBass.bind(this)
     this.handleFloorTom=this.handleFloorTom.bind(this)
     this.handleKeyPress=this.handleKeyPress.bind(this)
+    this.testFunc=this.testFunc.bind(this)
 
 this.state ={
   drumpart: "Click A Pad!"
@@ -26,6 +27,7 @@ this.state ={
       drumpart: "Open Hi-Hat"
     })
   }
+  
   handleCrash() {
     document.getElementById("W").load()
     document.getElementById("W").play()
@@ -152,8 +154,15 @@ this.state ={
       drumpart: "Floor Tom"
     })
     break;
+  } 
+}
+
+testFunc() {
+  if(document.getElementById("input").checked) {
+  console.log("TEST FUNC!")
   }
 }
+
 
 
 render() {
@@ -208,12 +217,14 @@ render() {
       </audio>
       </button>
       <label className="label">
-  <input id="input" type="checkbox"/>
+  <input id="input" type="checkbox" onClick={this.testFunc}/>
   <span className="span"></span>
+  ON/OFF
 </label>
 <label id="label2">
   <input id="input2" type="checkbox"/>
   <span id="span2"></span>
+  SWITCH BANK
 </label>
       <div id="display">{this.state.drumpart}</div>
       </div>
@@ -226,3 +237,11 @@ render() {
 
 
 ReactDOM.render(<App />, document.getElementById("app"))
+
+
+
+
+/*The Power button: 
+-The quick and easy solution might be to get a clip of silence, and switch the functions to play the silent
+clip.
+-It might be easier to disable the functions*/

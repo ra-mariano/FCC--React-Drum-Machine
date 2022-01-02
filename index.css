@@ -1,5 +1,6 @@
 #input {
-  visibility: hidden
+  visibility: hidden;
+  margin-bottom: 20px
 }
 
 .label {
@@ -44,6 +45,7 @@ input:checked + .span::after {
 
  #input2 {
    visibility: hidden;
+   margin-bottom: 20px;
  }
 
 #label2 {
