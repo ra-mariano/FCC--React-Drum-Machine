@@ -153,3 +153,31 @@ input:checked + .span::after {
   transform: translateX(22px);
 } 
 
+@media (max-width: 900px) {
+  #container {
+    min-height: 1080px;
+  }
+
+  #drum-machine {
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    height: 900px
+  }
+
+  #drum-pad-section {
+    grid-template-columns: 140px 140px 40px;
+  }
+  #divider {
+    height: 6px;
+    width: 370px;
+    background-color: rgb(23, 8, 37);
+  }
+  #options {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+
+
+}
