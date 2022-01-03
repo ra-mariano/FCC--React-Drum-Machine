@@ -85,3 +85,4 @@ input:checked + .span::after {
 #input2:checked + #span2::before {
   transform: translateX(22px);
 } 
+

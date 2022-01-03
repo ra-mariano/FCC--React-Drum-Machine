@@ -14,6 +14,7 @@ class App extends React.Component {
     this.handleFloorTom=this.handleFloorTom.bind(this)
     this.handleKeyPress=this.handleKeyPress.bind(this)
     this.powerButton=this.powerButton.bind(this)
+    this.setVolume=this.setVolume.bind(this)
 
 this.state ={
   drumpart: "Click A Pad!"
@@ -170,6 +171,9 @@ powerButton() {
   }
 }
 
+setVolume() {
+  
+}
 
 
 render() {
@@ -233,9 +237,11 @@ render() {
   <span id="span2"></span>
   SWITCH BANK
 </label>
+
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange"/>
+  <input type="range" min="1" max="100" class="slider" id="myRange" onCLick={this.setVolume}/>
 </div>
+
       <div id="display">{this.state.drumpart}</div>
       </div>
       </div>
