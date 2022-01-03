@@ -17,7 +17,8 @@ class App extends React.Component {
     this.setVolume=this.setVolume.bind(this)
 
 this.state ={
-  drumpart: "Click A Pad!"
+  drumpart: "Click A Pad!",
+  volume: .5
 }
 
   }
@@ -171,13 +172,19 @@ powerButton() {
   }
 }
 
-setVolume() {
-  
+setVolume(){
+  this.setState({
+    volume: document.getElementById("slider").value/100
+  }, () => {
+    document.getElementsByClassName("clip").forEach(items => items.volume=this.state.volume
+  )});
 }
+
 
 
 render() {
   return (
+    
       <div id="container">
         <div id="drum-machine">
       <h1>React Drum Machine</h1>
@@ -238,8 +245,8 @@ render() {
   SWITCH BANK
 </label>
 
-<div class="slidecontainer">
-  <input type="range" min="1" max="100" class="slider" id="myRange" onCLick={this.setVolume}/>
+<div id="sliderContainer">
+  <input type="range" min="0" max="100" id="slider" defaultValue="100" onClick={this.setVolume}/>
 </div>
 
       <div id="display">{this.state.drumpart}</div>
@@ -257,7 +264,3 @@ ReactDOM.render(<App />, document.getElementById("app"))
 
 
 
-/*The Power button: 
--The quick and easy solution might be to get a clip of silence, and switch the functions to play the silent
-clip.
--It might be easier to disable the functions*/
