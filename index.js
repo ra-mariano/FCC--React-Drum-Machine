@@ -17,7 +17,7 @@ class App extends React.Component {
     this.setVolume=this.setVolume.bind(this)
 
 this.state ={
-  drumpart: "Click A Pad!",
+  drumpart: "CLICK A PAD!",
   volume: .5
 }
 
@@ -186,70 +186,80 @@ render() {
   return (
     
       <div id="container">
-        <div id="drum-machine">
-      <h1>React Drum Machine</h1>
+      <h1 id="header">REACT DRUM MACHINE</h1>
+<div id="drum-machine">
+        <div id="drum-pad-section">
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
-        Q
+        <h3>Q</h3>
         <audio className="clip" id="Q" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
     </audio>
       </button>
      
       <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
-        W
+      <h3>W</h3>
       <audio className="clip" id="W" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
     </audio>
       </button>
     <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
-        E
+    <h3>E</h3>
       <audio className="clip" id="E" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
     </audio>
       </button>
       <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
-        A
+      <h3>A</h3>
       <audio className="clip" id="A" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
     </audio>
       </button>
     <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
-        S
+    <h3>S</h3>
       <audio className="clip" id="S" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
     </audio>
       </button>
      <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
-        D
+     <h3>D</h3>
       <audio className="clip" id="D" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
     </audio>
       </button>
       <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
-        Z
+      <h3>Z</h3>
       <audio className="clip" id="Z" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
       </audio>
       </button>
       <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
-        X
+      <h3>X</h3>
       <audio className="clip" id="X" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
       </audio>
       </button>
       <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
-        C
+      <h3>C</h3>
       <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
       </audio>
       </button>
+</div>
+<div id="options">
+  <h1>SETTINGS</h1>
+      <div className="settings">
       <label className="label">
-  <input id="input" type="checkbox" onClick={this.powerButton}/>
+  <input className= "settings" id="input" type="checkbox" onClick={this.powerButton}/>
   <span className="span"></span>
   ON/OFF
 </label>
+</div>
+<div className="settings">
 <label id="label2">
   <input id="input2" type="checkbox"/>
   <span id="span2"></span>
   SWITCH BANK
 </label>
+</div>
 
-<div id="sliderContainer">
+<div className="settings" id="sliderContainer">
   <input type="range" min="0" max="100" id="slider" defaultValue="100" onClick={this.setVolume}/>
 </div>
 
-      <div id="display">{this.state.drumpart}</div>
+      <div className="settings" id="display">{this.state.drumpart}</div>
+      
+      </div>
       </div>
       </div>
      
