@@ -1,15 +1,35 @@
-soundBankTwo= [
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/21[kb]brightohh808.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/96[kb]909-bright-crash.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/85[kb]909-bright-ride.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/27[kb]chh808.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/13[kb]707-clap.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/iElectribe%20Kicks/47[kb]iELECTRIBE-kick-11.wav.mp3,
-  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3
+let soundBankOne = [
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3"
 ]
 
+let soundBankTwo= [
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/21[kb]brightohh808.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/96[kb]909-bright-crash.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/85[kb]909-bright-ride.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/27[kb]chh808.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/13[kb]707-clap.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/iElectribe%20Kicks/47[kb]iELECTRIBE-kick-11.wav.mp3",
+  "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3"
+]
+
+/* Have a click handler listen for the toggle,
+let audioTags = document.getElementsByClassName("clip")
+when clicked, it runs a function that goes, if (on/off button).checked, 
+audioTags.forEach(items => items.src = soundBankTwo[audioTags.indexOf(items)])
+
+else 
+audioTags.forEach(items => items.src = soundBankOne[audioTags.indexOf(items)])
+*/ 
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +47,7 @@ class App extends React.Component {
     this.handleKeyPress=this.handleKeyPress.bind(this)
     this.powerButton=this.powerButton.bind(this)
     this.setVolume=this.setVolume.bind(this)
+    this.switchBank=this.switchBank.bind(this)
 
 this.state ={
   drumpart: "CLICK A PAD!",
@@ -192,6 +213,18 @@ setVolume(){
   )});
 }
 
+switchBank(){
+  console.log(document.getElementById("Q").src)
+  let audioTags = document.getElementsByClassName("clip")
+  console.log(audioTags)
+ if(document.getElementById("input2").checked) {
+audioTags.forEach(items => items.src = soundBankTwo[audioTags.indexOf(items)])
+}
+else {
+audioTags.forEach(items => items.src = soundBankOne[audioTags.indexOf(items)])
+}
+}
+
 
 
 render() {
@@ -204,48 +237,48 @@ render() {
         <div id="drum-pad-section">
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
         <h3>Q</h3>
-        <audio className="clip" id="Q" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/62[kb]half_open_hh.wav.mp3">
+        <audio className="clip" id="Q" src={soundBankOne[0]}>
     </audio>
       </button>
      
       <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
       <h3>W</h3>
-      <audio className="clip" id="W" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/102[kb]crappy-crash.wav.mp3">
+      <audio className="clip" id="W" src={soundBankOne[1]}>
     </audio>
       </button>
     <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
     <h3>E</h3>
-      <audio className="clip" id="E" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/50[kb]hismashride.wav.mp3">
+      <audio className="clip" id="E" src={soundBankOne[2]}>
     </audio>
       </button>
       <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
       <h3>A</h3>
-      <audio className="clip" id="A" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/10[kb]crunchmhh.wav.mp3">
+      <audio className="clip" id="A" src={soundBankOne[3]}>
     </audio>
       </button>
     <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
     <h3>S</h3>
-      <audio className="clip" id="S" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3">
+      <audio className="clip" id="S" src={soundBankOne[4]}>
     </audio>
       </button>
      <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
      <h3>D</h3>
-      <audio className="clip" id="D" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3">
+      <audio className="clip" id="D" src={soundBankOne[5]}>
     </audio>
       </button>
       <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
       <h3>Z</h3>
-      <audio className="clip" id="Z" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Snares/61[kb]acoustic_snare.wav.mp3">
+      <audio className="clip" id="Z" src={soundBankOne[6]}>
       </audio>
       </button>
       <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
       <h3>X</h3>
-      <audio className="clip" id="X" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/46[kb]analogbd2.wav.mp3">
+      <audio className="clip" id="X" src={soundBankOne[7]}>
       </audio>
       </button>
       <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
       <h3>C</h3>
-      <audio className="clip" id="C" src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/90[kb]loetom.wav.mp3">
+      <audio className="clip" id="C" src={soundBankOne[8]}>
       </audio>
       </button>
 </div>
@@ -263,7 +296,7 @@ render() {
 </div>
 <div className="settings">
 <label id="label2">
-  <input id="input2" type="checkbox"/>
+  <input id="input2" type="checkbox" onClick={this.switchBank}/>
   <span id="span2"></span>
   SWITCH BANK
 </label>
