@@ -1,3 +1,15 @@
+soundBankTwo= [
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/21[kb]brightohh808.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/96[kb]909-bright-crash.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Rides/85[kb]909-bright-ride.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Hats/27[kb]chh808.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/299[kb]one-gentle-epiano-hit.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/356[kb]one-staggered-epiano-chord-2.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/13[kb]707-clap.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/iElectribe%20Kicks/47[kb]iELECTRIBE-kick-11.wav.mp3,
+  https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3
+]
+
 
 class App extends React.Component {
   constructor(props) {
@@ -187,6 +199,7 @@ render() {
     
       <div id="container">
       <h1 id="header">REACT DRUM MACHINE</h1>
+   
 <div id="drum-machine">
         <div id="drum-pad-section">
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
@@ -236,6 +249,9 @@ render() {
       </audio>
       </button>
 </div>
+<div id="divider">
+
+</div>
 <div id="options">
   <h1>SETTINGS</h1>
       <div className="settings">
@@ -261,6 +277,7 @@ render() {
       
       </div>
       </div>
+      
       </div>
      
       ) 

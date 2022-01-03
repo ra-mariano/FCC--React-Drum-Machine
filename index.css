@@ -2,12 +2,14 @@
   background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/67/83/YRe3kg.png);
   min-height: 100vh;
   text-align: center;
-  font-family:Arial, Helvetica, sans-serif
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 #header {
   color:aliceblue;
   font-size: 50px;
+  padding-top: 20px;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -19,16 +21,22 @@ h3 {
   font-size: 30px
 }
 
+
+
 #drum-machine {
   display: flex;
   background-color:#546777; 
   justify-content: center;
-  height: 500px  
+  height: 500px;  
+  width: 800px;
+  margin: auto;
+  box-shadow: 10px 10px 8px #444444;
+  border-radius: 5px;
 }
 
 #drum-pad-section {
   display: grid;
-  grid-template-columns: 140px 140px 140px;
+  grid-template-columns: 140px 140px 110px;
   margin-right: 100px;
   margin-top: 20px
 }
@@ -42,9 +50,16 @@ h3 {
   background-color:rgb(151, 148, 148)
 }
 
+#divider {
+  margin-top: 45px;
+  height: 420px;
+  width: 6px;
+  background-color: rgb(23, 8, 37);
+}
+
 #options {
   margin-top: 60px;
-
+  margin-left: 60px
 }
 
 .settings {
