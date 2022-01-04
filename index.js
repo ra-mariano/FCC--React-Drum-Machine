@@ -125,64 +125,64 @@ this.state ={
   }
   
   handleKeyPress(e) {
-    switch (e.key) {
-    case "q":
+    switch (e.code) {
+    case "KeyQ":
       document.getElementById("Q").load()
       document.getElementById("Q").play() 
     this.setState({
       drumpart: "Open Hi-Hat"
     })
     break; 
-    case "w": 
+    case "KeyW": 
     document.getElementById("W").load()
     document.getElementById("W").play()
     this.setState({
       drumpart: "Crash"
     })
     break;
-    case "e": 
+    case "KeyE": 
     document.getElementById("E").load()
     document.getElementById("E").play()
     this.setState({
       drumpart: "Ride"
     })
     break;
-    case "a":  
+    case "KeyA":  
     document.getElementById("A").load()
     document.getElementById("A").play()
     this.setState({
       drumpart: "Closed Hi-Hat"
     })
     break;
-    case "s":  
+    case "KeyS":  
     document.getElementById("S").load()
     document.getElementById("S").play()
     this.setState({
       drumpart: "High Tom"
     })
     break;
-    case "d":  
+    case "KeyD":  
     document.getElementById("D").load()
     document.getElementById("D").play()
     this.setState({
       drumpart: "Low Tom"
     })
     break;
-    case "z":  
+    case "KeyZ":  
     document.getElementById("Z").load()
     document.getElementById("Z").play()
     this.setState({
       drumpart: "Snare"
     })
     break;
-    case "x":  
+    case "KeyX":  
     document.getElementById("X").load()
     document.getElementById("X").play()
     this.setState({
       drumpart: "Bass"
     })
     break;
-    case "c":  
+    case "KeyC":  
     document.getElementById("C").load()
     document.getElementById("C").play()
     this.setState({
@@ -288,9 +288,9 @@ render() {
 <div id="options">
   <h1>SETTINGS</h1>
       <div className="settings">
-      <label className="label">
+      <label id="label">
   <input className= "settings" id="input" type="checkbox" onClick={this.powerButton}/>
-  <span className="span"></span>
+  <span id="span"></span>
   ON/OFF
 </label>
 </div>
@@ -301,7 +301,6 @@ render() {
   BANK
 </label>
 </div>
-
 <div className="settings" id="sliderContainer">
   <input type="range" min="0" max="100" id="slider" defaultValue="100" onClick={this.setVolume}/>
 </div>
