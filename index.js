@@ -51,7 +51,7 @@ class App extends React.Component {
 
 this.state ={
   drumpart: "CLICK A PAD!",
-  volume: .5
+  volume: .5,
 }
 
   }
@@ -127,8 +127,8 @@ this.state ={
   handleKeyPress(e) {
     switch (e.key) {
     case "q":
-    document.getElementById("Q").load()
-    document.getElementById("Q").play()
+      document.getElementById("Q").load()
+      document.getElementById("Q").play() 
     this.setState({
       drumpart: "Open Hi-Hat"
     })
@@ -191,6 +191,7 @@ this.state ={
     break;
   } 
 }
+  
 
 powerButton() {
   if(document.getElementById("input").checked) {
@@ -214,14 +215,13 @@ setVolume(){
 }
 
 switchBank(){
-  console.log(document.getElementById("Q").src)
   let audioTags = document.getElementsByClassName("clip")
-  console.log(audioTags)
+  let audioArray = Array.from(audioTags)
  if(document.getElementById("input2").checked) {
-audioTags.forEach(items => items.src = soundBankTwo[audioTags.indexOf(items)])
+audioTags.forEach(items => items.src = soundBankTwo[audioArray.indexOf(items)])
 }
 else {
-audioTags.forEach(items => items.src = soundBankOne[audioTags.indexOf(items)])
+  audioTags.forEach(items => items.src = soundBankOne[audioArray.indexOf(items)])
 }
 }
 
@@ -237,48 +237,48 @@ render() {
         <div id="drum-pad-section">
     <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
         <h3>Q</h3>
-        <audio className="clip" id="Q" src={soundBankOne[0]}>
+        <audio className="clip" id="Q" preload= "auto" src={soundBankOne[0]}>
     </audio>
       </button>
      
       <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
       <h3>W</h3>
-      <audio className="clip" id="W" src={soundBankOne[1]}>
+      <audio className="clip" id="W" preload= "auto" src={soundBankOne[1]}>
     </audio>
       </button>
     <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
     <h3>E</h3>
-      <audio className="clip" id="E" src={soundBankOne[2]}>
+      <audio className="clip" id="E" preload= "auto" src={soundBankOne[2]}>
     </audio>
       </button>
       <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
       <h3>A</h3>
-      <audio className="clip" id="A" src={soundBankOne[3]}>
+      <audio className="clip" id="A" preload= "auto" src={soundBankOne[3]}>
     </audio>
       </button>
     <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
     <h3>S</h3>
-      <audio className="clip" id="S" src={soundBankOne[4]}>
+      <audio className="clip" id="S" preload= "auto" src={soundBankOne[4]}>
     </audio>
       </button>
      <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
      <h3>D</h3>
-      <audio className="clip" id="D" src={soundBankOne[5]}>
+      <audio className="clip" id="D" preload= "auto" src={soundBankOne[5]}>
     </audio>
       </button>
       <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
       <h3>Z</h3>
-      <audio className="clip" id="Z" src={soundBankOne[6]}>
+      <audio className="clip" id="Z" preload= "auto" src={soundBankOne[6]}>
       </audio>
       </button>
       <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
       <h3>X</h3>
-      <audio className="clip" id="X" src={soundBankOne[7]}>
+      <audio className="clip" id="X" preload= "auto" src={soundBankOne[7]}>
       </audio>
       </button>
       <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
       <h3>C</h3>
-      <audio className="clip" id="C" src={soundBankOne[8]}>
+      <audio className="clip" id="C" preload= "auto" src={soundBankOne[8]}>
       </audio>
       </button>
 </div>
@@ -298,7 +298,7 @@ render() {
 <label id="label2">
   <input id="input2" type="checkbox" onClick={this.switchBank}/>
   <span id="span2"></span>
-  SWITCH BANK
+  BANK
 </label>
 </div>
 
