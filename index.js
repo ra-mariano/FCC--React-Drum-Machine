@@ -22,14 +22,6 @@ let soundBankTwo= [
   "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Melodic%20Stabs%20and%20Hits/274[kb]one-staggered-epiano-chord.wav.mp3"
 ]
 
-/* Have a click handler listen for the toggle,
-let audioTags = document.getElementsByClassName("clip")
-when clicked, it runs a function that goes, if (on/off button).checked, 
-audioTags.forEach(items => items.src = soundBankTwo[audioTags.indexOf(items)])
-
-else 
-audioTags.forEach(items => items.src = soundBankOne[audioTags.indexOf(items)])
-*/ 
 
 class App extends React.Component {
   constructor(props) {
@@ -53,6 +45,8 @@ this.state ={
   drumpart: "CLICK A PAD!",
   volume: .5,
 }
+
+//Attempting to shorten code by creating an onClick function with switch case to replace the separate drumPad functions
 
   }
   handleOpenhh() {
@@ -199,6 +193,7 @@ powerButton() {
       drumpart: ""
     });
     document.getElementsByClassName("clip").forEach(items => items.muted = true)
+    handleKeyPress = function(){return false} 
   }
   else {
     document.getElementsByClassName("clip").forEach(items => items.load())
