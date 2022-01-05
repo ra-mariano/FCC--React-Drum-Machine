@@ -50,6 +50,12 @@ h3 {
   background-color:rgb(88, 128, 189)
 }
 
+.drum-pad:active {
+    background-color: rgb(34, 72, 128);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 #divider {
   margin-top: 45px;
   height: 420px;
@@ -133,7 +139,7 @@ span::before {
   border-radius: 34px;
 }
 
-span2::before{
+#span2::before{
   position: absolute;
   content: '';
   width: 25px;
@@ -149,7 +155,7 @@ span2::before{
   background-color: rgb(247, 26, 70);
 } 
 
-#input2:checked + span2::before {
+#input2:checked + #span2::before {
   transform: translateX(22px);
 } 
 

@@ -27,15 +27,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleOpenhh=this.handleOpenhh.bind(this)
-    this.handleCrash=this.handleCrash.bind(this)
-    this.handleRide=this.handleRide.bind(this)
-    this.handleClosedhh=this.handleClosedhh.bind(this)
-    this.handleTom1=this.handleTom1.bind(this)
-    this.handleTom2=this.handleTom2.bind(this)
-    this.handleSnare=this.handleSnare.bind(this)
-    this.handleBass=this.handleBass.bind(this)
-    this.handleFloorTom=this.handleFloorTom.bind(this)
+    this.handleClick=this.handleClick.bind(this)
     this.handleKeyPress=this.handleKeyPress.bind(this)
     this.powerButton=this.powerButton.bind(this)
     this.setVolume=this.setVolume.bind(this)
@@ -46,77 +38,85 @@ this.state ={
   volume: .5,
 }
 
-//Attempting to shorten code by creating an onClick function with switch case to replace the separate drumPad functions
+}
 
-  }
-  handleOpenhh() {
+
+componentDidMount() {
+  document.addEventListener("click", this.handleClick)
+  document.addEventListener("keydown", this.handleKeyPress)
+}
+
+handleClick(e) {
+  let buttonID = e.target.id
+  switch (buttonID) {
+  case "openhh":
     document.getElementById("Q").load()
-    document.getElementById("Q").play()
+    document.getElementById("Q").play() 
     this.setState({
       drumpart: "Open Hi-Hat"
     })
-  }
-  
-  handleCrash() {
+    break; 
+    case "crash":
     document.getElementById("W").load()
-    document.getElementById("W").play()
+    document.getElementById("W").play() 
     this.setState({
       drumpart: "Crash"
     })
-  }
-  handleRide() {
+    break; 
+    case "ride":
     document.getElementById("E").load()
-    document.getElementById("E").play()
+    document.getElementById("E").play() 
     this.setState({
       drumpart: "Ride"
     })
-  }
-  handleClosedhh() {
+    break; 
+    case "closedhh":
     document.getElementById("A").load()
-    document.getElementById("A").play()
+      document.getElementById("A").play() 
     this.setState({
       drumpart: "Closed Hi-Hat"
     })
-  }
-  handleTom1() {
+    break; 
+    case "tom1":
     document.getElementById("S").load()
-    document.getElementById("S").play()
+      document.getElementById("S").play() 
     this.setState({
       drumpart: "High Tom"
     })
-  }
-  handleTom2() {
+    break; 
+    case "tom2":
     document.getElementById("D").load()
-    document.getElementById("D").play()
+      document.getElementById("D").play() 
     this.setState({
       drumpart: "Low Tom"
     })
-  }
-  handleSnare() {
+    break; 
+    case "snare":
     document.getElementById("Z").load()
-    document.getElementById("Z").play()
+      document.getElementById("Z").play() 
     this.setState({
       drumpart: "Snare"
     })
-  }
-  handleBass() {
+    break; 
+    case "bass":
     document.getElementById("X").load()
-    document.getElementById("X").play()
+      document.getElementById("X").play() 
     this.setState({
       drumpart: "Bass"
     })
-  }
-  handleFloorTom() {
+    break; 
+    case "floortom":
     document.getElementById("C").load()
-    document.getElementById("C").play()
+      document.getElementById("C").play() 
     this.setState({
       drumpart: "Floor Tom"
     })
+    break; 
   }
+}
+
+
   
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyPress)
-  }
   
   handleKeyPress(e) {
     switch (e.code) {
@@ -185,6 +185,7 @@ this.state ={
     break;
   } 
 }
+
   
 
 powerButton() {
@@ -230,48 +231,48 @@ render() {
    
 <div id="drum-machine">
         <div id="drum-pad-section">
-    <button className= "drum-pad" id="openhh" onClick = {this.handleOpenhh}>
+    <button className= "drum-pad" id="openhh">
         <h3>Q</h3>
         <audio className="clip" id="Q" preload= "auto" src={soundBankOne[0]}>
     </audio>
       </button>
      
-      <button className= "drum-pad" id="crash" onClick = {this.handleCrash}>
+      <button className= "drum-pad" id="crash">
       <h3>W</h3>
       <audio className="clip" id="W" preload= "auto" src={soundBankOne[1]}>
     </audio>
       </button>
-    <button className= "drum-pad" id="ride" onClick = {this.handleRide}>
+    <button className= "drum-pad" id="ride">
     <h3>E</h3>
       <audio className="clip" id="E" preload= "auto" src={soundBankOne[2]}>
     </audio>
       </button>
-      <button className= "drum-pad" id="closedhh" onClick = {this.handleClosedhh}>
+      <button className= "drum-pad" id="closedhh">
       <h3>A</h3>
       <audio className="clip" id="A" preload= "auto" src={soundBankOne[3]}>
     </audio>
       </button>
-    <button className= "drum-pad" id="tom1" onClick = {this.handleTom1}>
+    <button className= "drum-pad" id="tom1">
     <h3>S</h3>
       <audio className="clip" id="S" preload= "auto" src={soundBankOne[4]}>
     </audio>
       </button>
-     <button className= "drum-pad" id="tom2" onClick = {this.handleTom2}>
+     <button className= "drum-pad" id="tom2">
      <h3>D</h3>
       <audio className="clip" id="D" preload= "auto" src={soundBankOne[5]}>
     </audio>
       </button>
-      <button className= "drum-pad" id="snare" onClick = {this.handleSnare}>
+      <button className= "drum-pad" id="snare">
       <h3>Z</h3>
       <audio className="clip" id="Z" preload= "auto" src={soundBankOne[6]}>
       </audio>
       </button>
-      <button className= "drum-pad" id="bass" onClick = {this.handleBass}>
+      <button className= "drum-pad" id="bass">
       <h3>X</h3>
       <audio className="clip" id="X" preload= "auto" src={soundBankOne[7]}>
       </audio>
       </button>
-      <button className= "drum-pad" id="floortom" onClick = {this.handleFloorTom}>
+      <button className= "drum-pad" id="floortom">
       <h3>C</h3>
       <audio className="clip" id="C" preload= "auto" src={soundBankOne[8]}>
       </audio>
