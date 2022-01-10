@@ -46,9 +46,19 @@ componentDidMount() {
   document.addEventListener("keydown", this.handleKeyPress)
 }
 
-handleClick(e) {
-  let buttonID = e.target.id
-  switch (buttonID) {
+handleClick(event) {
+  if(document.getElementById("input").checked) {
+    this.setState({
+      drumpart: ""
+    })
+   if (event.target.className === "drum-pad") {
+        this.setState({
+          drumpart: "MACHINE IS OFF!"
+        })
+      }
+  }
+  else {
+  switch (event.target.id) {
   case "openhh":
     document.getElementById("Q").load()
     document.getElementById("Q").play() 
@@ -56,44 +66,44 @@ handleClick(e) {
       drumpart: "Open Hi-Hat"
     })
     break; 
-    case "crash":
+  case "crash":
     document.getElementById("W").load()
     document.getElementById("W").play() 
     this.setState({
       drumpart: "Crash"
     })
     break; 
-    case "ride":
+  case "ride":
     document.getElementById("E").load()
     document.getElementById("E").play() 
     this.setState({
       drumpart: "Ride"
     })
     break; 
-    case "closedhh":
+  case "closedhh":
     document.getElementById("A").load()
-      document.getElementById("A").play() 
+    document.getElementById("A").play() 
     this.setState({
       drumpart: "Closed Hi-Hat"
     })
     break; 
     case "tom1":
     document.getElementById("S").load()
-      document.getElementById("S").play() 
+    document.getElementById("S").play() 
     this.setState({
       drumpart: "High Tom"
     })
     break; 
     case "tom2":
     document.getElementById("D").load()
-      document.getElementById("D").play() 
+    document.getElementById("D").play() 
     this.setState({
       drumpart: "Low Tom"
     })
     break; 
     case "snare":
     document.getElementById("Z").load()
-      document.getElementById("Z").play() 
+    document.getElementById("Z").play() 
     this.setState({
       drumpart: "Snare"
     })
@@ -114,18 +124,26 @@ handleClick(e) {
     break; 
   }
 }
+}
 
 
-  
-  
-  handleKeyPress(e) {
+
+
+handleKeyPress(e) {
+  if(document.getElementById("input").checked) {
+    this.setState({
+      drumpart: "MACHINE IS OFF!"
+    })
+  }
+  else {
     switch (e.code) {
     case "KeyQ":
-      document.getElementById("Q").load()
-      document.getElementById("Q").play() 
+    document.getElementById("Q").load()
+    document.getElementById("Q").play() 
     this.setState({
       drumpart: "Open Hi-Hat"
     })
+    console.log(this.setState.drumpart)
     break; 
     case "KeyW": 
     document.getElementById("W").load()
@@ -185,20 +203,29 @@ handleClick(e) {
     break;
   } 
 }
+}
+
+noDisplay() {
+  this.setState({
+    drumpart: ""
+  })
+}
 
   
-
-powerButton() {
+powerButton(event) {
   if(document.getElementById("input").checked) {
     this.setState({
       drumpart: ""
     });
     document.getElementsByClassName("clip").forEach(items => items.muted = true)
-    handleKeyPress = function(){return false} 
-  }
+    }  
+  
   else {
     document.getElementsByClassName("clip").forEach(items => items.load())
     document.getElementsByClassName("clip").forEach(items => items.muted = false)
+    this.setState({
+      drumpart: "CLICK A PAD!"
+    });
   }
 }
 
@@ -222,7 +249,6 @@ else {
 }
 
 
-
 render() {
   return (
     
@@ -232,48 +258,53 @@ render() {
 <div id="drum-machine">
         <div id="drum-pad-section">
     <button className= "drum-pad" id="openhh">
-        <h3>Q</h3>
+        Q
+        <img className="iconz" src="PinClipart.com_cymbals-clip-art_2386276.png"/>
+      </button>
+
         <audio className="clip" id="Q" preload= "auto" src={soundBankOne[0]}>
     </audio>
-      </button>
      
       <button className= "drum-pad" id="crash">
-      <h3>W</h3>
+      W
       <audio className="clip" id="W" preload= "auto" src={soundBankOne[1]}>
     </audio>
       </button>
     <button className= "drum-pad" id="ride">
-    <h3>E</h3>
+    E
       <audio className="clip" id="E" preload= "auto" src={soundBankOne[2]}>
     </audio>
       </button>
       <button className= "drum-pad" id="closedhh">
-      <h3>A</h3>
+      A
+    
       <audio className="clip" id="A" preload= "auto" src={soundBankOne[3]}>
     </audio>
       </button>
     <button className= "drum-pad" id="tom1">
-    <h3>S</h3>
+    S
       <audio className="clip" id="S" preload= "auto" src={soundBankOne[4]}>
     </audio>
       </button>
      <button className= "drum-pad" id="tom2">
-     <h3>D</h3>
+     D
       <audio className="clip" id="D" preload= "auto" src={soundBankOne[5]}>
     </audio>
       </button>
       <button className= "drum-pad" id="snare">
-      <h3>Z</h3>
+    Z
+    <img className="iconz" src="PinClipart.com_snare-drum-clip-art_744391.png"/>
       <audio className="clip" id="Z" preload= "auto" src={soundBankOne[6]}>
       </audio>
       </button>
       <button className= "drum-pad" id="bass">
-      <h3>X</h3>
+    X
+    <img className="iconz" src="PinClipart.com_bass-drum-clip-art_5683416.png"/>
       <audio className="clip" id="X" preload= "auto" src={soundBankOne[7]}>
       </audio>
       </button>
       <button className= "drum-pad" id="floortom">
-      <h3>C</h3>
+    C
       <audio className="clip" id="C" preload= "auto" src={soundBankOne[8]}>
       </audio>
       </button>

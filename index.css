@@ -47,13 +47,15 @@ h3 {
   margin: 7px 7px 7px 7px;
   border-radius: 7px;
   box-shadow: 7px 7px #353434;
-  background-color:rgb(88, 128, 189)
+  background-color:rgb(88, 128, 189);
+  font-size: xx-large;
+  font-weight: bolder
 }
 
 .drum-pad:active {
-    background-color: rgb(34, 72, 128);
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    background-color: rgb(53, 92, 201);
+    box-shadow: 0 2px rgb(88, 87, 87);
+    transform: translateY(6px) translateX(6px)
 }
 
 #divider {
@@ -159,6 +161,13 @@ span::before {
   transform: translateX(22px);
 } 
 
+.iconz {
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin: auto
+}
+
 @media (max-width: 900px) {
   #container {
     min-height: 1080px;
@@ -174,6 +183,7 @@ span::before {
   #drum-pad-section {
     grid-template-columns: 140px 140px 40px;
   }
+
   #divider {
     height: 6px;
     width: 370px;
