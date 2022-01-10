@@ -260,10 +260,10 @@ render() {
     <button className= "drum-pad" id="openhh">
         Q
         <img className="iconz" src="PinClipart.com_cymbals-clip-art_2386276.png"/>
-      </button>
-
         <audio className="clip" id="Q" preload= "auto" src={soundBankOne[0]}>
     </audio>
+      </button>
+
      
       <button className= "drum-pad" id="crash">
       W
